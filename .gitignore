@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Firebase config
+src/config/config.js
+
 # dependencies
 node_modules
 
@@ -13,6 +16,3 @@ build
 .DS_Store
 .env
 npm-debug.log
-
-# Firebase config
-/src/config/config.js
