@@ -1,5 +1,5 @@
-export default Class Config {
-  static function firebaseConfig() {
+export default class Config {
+  static firebaseConfig() {
     return {
       apiKey: '',
       authDomain: '',
