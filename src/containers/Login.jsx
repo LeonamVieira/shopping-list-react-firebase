@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Auth as Actions }  from '../actions';
 
+import '../styles/form.css';
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -36,32 +38,34 @@ class Login extends React.Component {
   render() {
     return (
       <div className="main-content">
-        <div className="row">
-          <div className="small-12 columns text-center">
-            <h3>Login</h3>
+        <div className="grid grid-fluid">
+          <div className="row">
+            <div className="col-12 text-center">
+              <h3>Login</h3>
+            </div>
           </div>
-        </div>
 
-        <div className="row">
-          <div className="small-12 columns">
-            <div className="login-form-container">
+          <div className="row">
+            <div className="col-12 columns">
+              <div className="login-form-container">
 
-              { this.renderAuthenticationError() }
+                { this.renderAuthenticationError() }
 
-              <form onSubmit={this.handleSubmit}>
-                <label>
-                  Email
-                  <input type="email" ref="email" required />
-                </label>
+                <form onSubmit={this.handleSubmit}>
+                  <label>
+                    <span>Email</span>
+                    <input type="email" ref="email" className="form-input" required />
+                  </label>
 
-                <label>
-                  Password
-                  <input type="password" ref="password" required />
-                </label>
-                <div className="text-center">
-                  <button className="button">Entrar</button>
-                </div>
-              </form>
+                  <label>
+                    <span>Password</span>
+                    <input type="password" ref="password" className="form-input" required />
+                  </label>
+                  <div className="text-center">
+                    <button className="btn">Entrar</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>

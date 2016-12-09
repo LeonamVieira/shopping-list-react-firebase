@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory  } from 'react-router';
 import { Provider } from 'react-redux';
 
+import 'siimple/dist/siimple.css';
+
 import RequireAuth from './containers/RequireAuth';
 import App from './components/App';
 import Tasks from './containers/Tasks';
