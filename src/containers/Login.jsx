@@ -26,7 +26,7 @@ class Login extends React.Component {
     const { authenticationError } = this.props;
     if (authenticationError) {
       return (
-        <div className="callout alert">
+        <div className="alert alert-error">
           {authenticationError}
         </div>
       );
@@ -41,7 +41,7 @@ class Login extends React.Component {
         <div className="grid grid-fluid">
           <div className="row">
             <div className="col-12 text-center">
-              <h3>Login</h3>
+              <h1>Login</h1>
             </div>
           </div>
 
