@@ -1,10 +1,76 @@
+import { browserHistory } from 'react-router';
 import firebase from 'firebase';
-
-import * as Auth from './auth';
 
 import Config from '../config/config';
 firebase.initializeApp(Config.firebaseConfig());
 
-export {
-  Auth,
-};
+
+/**
+ * User autentication
+ */
+export const SIGN_OUT_USER = 'SIGN_OUT_USER';
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const AUTH_USER = 'AUTH_USER';
+
+export function signInUser(credentials) {
+  return function(dispatch) {
+    firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password)
+      .then(response => {
+        browserHistory.replace('/');
+        dispatch(authUser());
+      })
+      .catch(error => {
+        dispatch(authError(error));
+      });
+  }
+}
+
+export function signOutUser() {
+  firebase.auth().signOut();
+  browserHistory.push('/login');
+
+  return {
+    type: SIGN_OUT_USER
+  }
+}
+
+export function verifyAuth() {
+  return function (dispatch) {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        dispatch(authUser(user));
+      } else {
+        dispatch(signOutUser());
+      }
+    });
+  }
+}
+
+export function authUser(user) {
+  return {
+    type: AUTH_USER,
+    payload: { user }
+  }
+}
+
+export function authError(error) {
+  return {
+    type: AUTH_ERROR,
+    payload: error
+  }
+}
+
+/**
+ * Sidebar
+ */
+
+ export const SIDEBAR_STATE = 'SIDEBAR_STATE';
+
+ export function toggleSidebar(isOpen) {
+   return function (dispatch) {
+     dispatch({
+       type: SIDEBAR_STATE,
+       payload: !isOpen
+     });
+   }
+ }

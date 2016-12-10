@@ -1,4 +1,4 @@
-import { Auth } from '../actions';
+import { AUTH_USER, SIGN_OUT_USER, AUTH_ERROR } from '../actions';
 
 const initialState =  {
   authenticated: false,
@@ -8,21 +8,21 @@ const initialState =  {
 
 export default function authReducer(state = initialState, action) {
   switch (action.type) {
-    case Auth.AUTH_USER:
+    case AUTH_USER:
       return {
         ...state,
         authenticated: true,
         user: action.payload.user,
         error: null
       };
-    case Auth.SIGN_OUT_USER:
+    case SIGN_OUT_USER:
       return {
         ...state,
         authenticated: false,
         user: null,
         error: null
       };
-    case Auth.AUTH_ERROR:
+    case AUTH_ERROR:
       return {
         ...state,
         user: null,

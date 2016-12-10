@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, browserHistory  } from 'react-router';
 import { Provider } from 'react-redux';
 
 import 'siimple/dist/siimple.css';
+import 'font-awesome/css/font-awesome.css';
 
 import RequireAuth from './containers/RequireAuth';
 import App from './components/App';

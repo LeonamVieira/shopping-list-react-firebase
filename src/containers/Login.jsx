@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Auth as Actions }  from '../actions';
+import * as Actions from '../actions';
 
 import '../styles/form.css';
 
@@ -48,9 +48,7 @@ class Login extends React.Component {
           <div className="row">
             <div className="col-12 columns">
               <div className="login-form-container">
-
                 { this.renderAuthenticationError() }
-
                 <form onSubmit={this.handleSubmit}>
                   <label>
                     <span>Email</span>

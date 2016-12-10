@@ -1,0 +1,65 @@
+.sidebar {
+  display: none;
+  height: 100%;
+  width: 1px;
+  padding: 1rem;
+
+  background: #51586e;
+  position: fixed!important;
+  z-index: 1;
+  overflow: auto;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.sidebar.open {
+  display: block;
+  width: 40%;
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    width: 90%;
+  }
+}
+
+.user-info {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eeeeed;
+}
+
+.user-info .user-email, .user-name {
+  font-size: 16px;
+  font-weight: 600;
+  padding-left:  1rem;
+  padding-bottom: 0.5rem;
+  color: black;
+}
+
+.user-image {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 90px;
+  height: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.user-image img {
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 90px;
+  background-color: white;
+}
+
+ul.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.menu-list li {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-bottom: 1px solid #eeeeed;
+}

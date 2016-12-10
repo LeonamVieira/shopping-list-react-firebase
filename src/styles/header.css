@@ -1,0 +1,17 @@
+.header {
+  background-color: #222;
+  padding: 0.5rem;
+}
+
+.header .header-text {
+  color: #4169E1;
+  margin: 0;
+}
+
+.header .burger-menu {
+  float: left;
+}
+
+.header .burger-menu:hover {
+  cursor: pointer;
+}
